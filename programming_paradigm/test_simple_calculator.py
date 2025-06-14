@@ -119,3 +119,11 @@ class SimpleCalculator:
             raise DivisionByZeroError("Cannot divide by zero")
         return a / b
    
+def test_divide(self):
+    self.assertEqual(self.calc.divide(10, 5), 2.0, "10 / 5 should equal 2.0")
+    self.assertEqual(self.calc.divide(-10, 5), -2.0, "-10 / 5 should equal -2.0")
+    self.assertEqual(self.calc.divide(0, 5), 0.0, "0 / 5 should equal 0.0")
+    self.assertEqual(self.calc.divide(7.5, 2.5), 3.0, "7.5 / 2.5 should equal 3.0")
+    self.assertEqual(self.calc.divide(-6, -3), 2.0, "-6 / -3 should equal 2.0")
+    with self.assertRaises(DivisionByZeroError):
+        self.calc.divide(10, 0)
